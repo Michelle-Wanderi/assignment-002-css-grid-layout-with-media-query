@@ -1,12 +1,17 @@
 .container{
 display: grid;
 height: 100vh;
-grid-template-rows: 3fr 3fr;
-grid-template-columns: 2fr 4fr 2fr;
+grid-template-rows: 1fr 0.4fr 0.4fr 0.4fr 0.4fr 0.4fr ;
+grid-template-columns: 1fr 2fr 1fr;
 grid-template-areas:
 "nav main sidebar "
-"content1 content2 content2"
+"content1 content3 content3"
+"content1 content4 content4"
+"content1 content5 content5"
+"content1 content6 content6"
+"content1 content7 content7"
  ;
+
 
 }
 h1{
@@ -31,26 +36,60 @@ main{
     text-align: center;
     border-style: solid;
     border-width: 1px;
-    font-style: bold;
+    
 }
 #content1{
     text-align: center;
-    border-style: solid;
-    border-width: 1px;
+    grid-area: content1;
     font-style: bold;
+    border: solid 1px;
 }
-#content2{
-    text-align: left;
-   border: 1px;
-   border-style: solid;
-   float: left;
-}
-
-
 img{
-    height: 200px;
-    width: 450px;
-    display: inline;
+    height: 400px;
+    width: 900px;
+    display: center;
+    align-items: center;
 }
-
-
+#content3{
+    background-color: yellow;
+    grid-area: content3;
+    
+}
+#content4{
+    background-color: aqua;
+    grid-area: content4;
+    border-left: 1px;
+}
+#content5{
+    background-color: blue;
+    grid-area: content5;
+    border-left: 1px;
+}
+#content6{
+    background-color: rgb(130, 228, 130);
+    grid-area: content6;
+    border-width: 1px;
+}
+#content7{
+    background-color: blueviolet;
+    grid-area: content7;
+    border-left: 1px;
+}  
+@media(max-width:576px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 2fr 2fr 2fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "nav"
+        "main"
+        "sidebar"
+        "content1"
+        "content3"
+        "content4"
+        "content5"
+        "content6"
+        "content7"
+        ;
+    }
+        
+}
